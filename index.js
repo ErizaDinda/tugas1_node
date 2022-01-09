@@ -15,9 +15,9 @@ app.post("/kubus", (req, res) => {
     let luas_permukaan = 6 * (sisi * sisi);
   
     let response = {
-      sisi: sisi,
-      volume: volume,
-      luas_permukaan: luas_permukaan,
+      sisi : sisi,
+      volume : volume,
+      luas_permukaan : luas_permukaan,
     };
     res.json(response);
   });
@@ -31,11 +31,11 @@ app.post("/balok", (req, res) => {
   let luas_permukaan = 2 * (panjang * lebar + panjang * tinggi + lebar * tinggi);
 
   let response = {
-    panjang: panjang,
-    lebar: lebar,
-    tinggi: tinggi,
-    volume: volume,
-    luas_permukaan: luas_permukaan,
+    panjang : panjang,
+    lebar : lebar,
+    tinggi : tinggi,
+    volume : volume,
+    luas_permukaan : luas_permukaan,
   };
   res.json(response);
 });
@@ -68,11 +68,11 @@ app.post("/tabung", (req, res) => {
   let luas_permukaan = 2 * phi * jari * (jari + tinggi);
 
   let response = {
-    jari: jari,
-    tinggi: tinggi,
-    phi: phi,
+    jari : jari,
+    tinggi : tinggi,
+    phi : phi,
     volume: volume,
-    luas_permukaan: luas_permukaan,
+    luas_permukaan : luas_permukaan,
   };
   res.json(response);
 });

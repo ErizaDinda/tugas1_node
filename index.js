@@ -45,15 +45,15 @@ app.post("/prisma_segiempat", (req,res)=>{
     let lebar = Number(req.body.lebar)
     let tinggi = Number(req.body.tinggi)
 
-    let luas_permukaan = 2 * (panjang * tinggi) + 2 * (panjang * lebar) + 2 * (lebar * tinggi)
     let volume = panjang * lebar * tinggi
+    let luas_permukaan = 2 * (panjang * tinggi) + 2 * (panjang * lebar) + 2 * (lebar * tinggi)
 
     let response = {
         panjang : panjang,
         lebar : lebar,
         tinggi : tinggi,
-        luas_permukaan : luas_permukaan,
-        volume : volume
+        volume : volume,
+        luas_permukaan : luas_permukaan
 
     }
     res.json(response)
@@ -198,14 +198,14 @@ app.post("/octal", (req,res) =>{
     let octal = Number(req.body.octal)
 
     let decimal = parseInt(octal,8)
-    let binary = parseInt(octal, 8).toString(2)
+    let biner = parseInt(octal, 8).toString(2)
     let hex = parseInt(octal, 8).toString(16)
 
     let response = {
         octal : octal,
         result : {
             decimal : decimal,
-            binary : binary,
+            biner : biner,
             hex : hex
         }
     }
@@ -217,7 +217,7 @@ app.post("/hex", (req,res) => {
     let hex = Number(req.body.hex)
 
     let decimal = parseInt(hex,16)
-    let binary = parseInt(hex, 16).toString(2)
+    let biner = parseInt(hex, 16).toString(2)
     let octal = parseInt(hex, 16).toString(8)
 
     let response = {
@@ -225,7 +225,7 @@ app.post("/hex", (req,res) => {
         result : {
             decimal : decimal,
             octal : octal,
-            binary : binary
+            biner : biner
         }
     }
     res.json(response)
@@ -242,13 +242,13 @@ app.post("/bmi", (req,res)=>{
         status="Kekurangan Berat Badan"
     }
     else if (bmi<=24.9 && bmi>=18.5) {
-        status="Normal(ideal)"
+        status="Normal (Ideal)"
     }
     else if (bmi<=29.9 && bmi>=25.0) {
         status="Kelebihan Berat Badan"
     }
     else{
-        status="kegemukan(Obesitas)"
+        status="kegemukan (Obesitas)"
     }
 
     let response = {
